@@ -1,0 +1,15 @@
+{
+  "presets": [
+    ["env", {
+      "modules": "umd",
+      "targets": {
+      }
+    }]
+  ],
+  "plugins": [
+    ["transform-regenerator", {
+      "asyncGenerators": true,
+      "async": true,
+    }]
+  ]
+}
