@@ -1,5 +1,4 @@
 'use strict';
-
 // your browser needs support for:
 // fetch
 // async/await functions
@@ -10,12 +9,12 @@ export default class FetchBase64 {
     this.url = url
     this.fetchFn = opts.shims.fetch || (typeof window !== 'undefined' && window.fetch.bind(window))
     if (!this.fetchFn) {
-      throw new Error('Unable to find fetch in browser or as a passed shim')
+      throw new Error('Unable to find fetch function in the browser or in a shim')
     }
 
     this.fileReaderFn = opts.shims.fileReader || (typeof window !== 'undefined' && window.FileReader.bind(window))
     if (!this.fileReaderFn) {
-      throw new Error('Unable to find FileReader in browser or as a passed shim')
+      throw new Error('Unable to find FileReader class in browser or as a shim')
     }
   }
   async fetch(url = '', opts) {
@@ -47,8 +46,8 @@ export default class FetchBase64 {
     let response = await this.fetchFn(url, opts)
 
     if (response.ok) {
-      let reader = new this.fileReaderFn()
       let blob = await response.blob()
+      let reader = new this.fileReaderFn()
       reader.readAsDataURL(blob)
 
       return new Promise((resolve, reject) => {

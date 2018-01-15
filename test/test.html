@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="expires" content="-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  </head>
+  <script src="../lib/fetch-base64.js?t=6"></script>
+  <script>
+  'use strict';
+
+  document.addEventListener('DOMContentLoaded', function(event) {
+
+    let b64f = new FetchBase64('./spongebob.png');
+    b64f.fetchAsData().then((base64) => {
+      console.log('spongebob.png is b64', base64);
+      document.getElementById('spongebob').src = base64;
+    }).catch((err) => {
+      console.error(err);
+    })
+  })
+  </script>
+  <style>
+  #spongebob {
+    position: absolute;
+    bottom: 10px;
+    top: 10px;
+    height: calc(100% - 20px);
+  }
+  </style>
+  <body>
+    <img id="spongebob" />
+  </body>
+
+</html>

@@ -1,15 +1,28 @@
 {
   "presets": [
     ["env", {
-      "modules": "umd",
       "targets": {
-      }
+        "chrome": "61",
+        "safari": "10.1",
+        "firefox": "57",
+        "ios": "10.3",
+        "edge": "15",
+        "node": "8"
+
+      },
+      useBuiltIns: true,
+      "debug": true,
+      "modules": "commonjs"
     }]
   ],
   "plugins": [
-    ["transform-regenerator", {
-      "asyncGenerators": true,
-      "async": true,
+    ["transform-es2015-modules-umd", {
+      "globals": {
+        "fetchBase64": "FetchBase64"
+      },
+      "exactGlobals": true
+
     }]
-  ]
+  ],
+  "moduleId": "fetchBase64"
 }
