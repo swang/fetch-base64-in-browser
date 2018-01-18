@@ -1,6 +1,6 @@
 {
   "name": "fetch-base64-in-browser",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Fetch data as base64 using only browser functions",
   "main": "lib/fetch-base64.js",
   "scripts": {
