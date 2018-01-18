@@ -2,7 +2,7 @@
   "name": "fetch-base64-in-browser",
   "version": "1.0.0",
   "description": "Fetch data as base64 using only browser functions",
-  "main": "fetch-base64.js",
+  "main": "lib/fetch-base64.js",
   "scripts": {
     "build": "babel -o lib/fetch-base64.js src/fetch-base64.js",
     "watch": "babel --watch -o lib/fetch-base64.js src/fetch-base64.js",
