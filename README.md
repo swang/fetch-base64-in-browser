@@ -3,6 +3,9 @@
 
 my original intent was to be able to catch short mp3 clips into localstorage since ios safari doesn't seem to cache audio directly.
 
+## mobile safari
+apparently the reason for writing this (getting around some mobile safari/ios issues) is now also disabled because of [changes webkit made over the summer](https://webkit.org/blog/7734/auto-play-policy-changes-for-macos/). this is probably not as useful anymore :|
+
 ## why not just use btoa() and atob()?
 those functions only convert strings into base64
 
